@@ -14,7 +14,8 @@ body {
   align-items: center;
 }
 
-/* css 내용 작성 */
+
+/* header */
 header {
   width: 1200px;
   height: 100px;
@@ -93,21 +94,21 @@ nav {
     transform: translateY(0);
   }
 }
+
+
+/* imgSlide */
 #imgSlide{
   position: relative;
   height: 300px;
 }
-
 #imgSlide a{
   position: absolute;
   transition: all 1s;
 }
-
 img{
   overflow-clip-margin: content-box;
   overflow: clip;
 }
-
 .imgText {
   position: absolute;
   top: 40%;
@@ -118,6 +119,9 @@ img{
   padding: 16px 100px;
   font-weight: bold;
 }
+
+
+/* contents */
 .contents {
   height: 200px;
   margin: 10px 0;
@@ -125,10 +129,12 @@ img{
   grid-template-columns: repeat(3, 1fr);
   position: relative;
 }
+
+
+/* tabMenu */
 .tabMenu {
   display: flex;
 }
-
 .tabMenu>li>a {
   padding: 0 10px;
   min-width: 85px;
@@ -169,17 +175,18 @@ img{
 .notice li:nth-child(even) {
   background: rgba(114, 63, 251, 0.1);
 }
-
 .gallery{
   left: 0;
 }
-
 .gallery ul{
   display: flex;
   justify-content: space-around;
   align-items: center;
   height: 100%;
 }
+
+
+/* banner */
 .banner{
   background: url(../resource/Contents/banner/banner.jpg);
   margin: 0 15px;
@@ -217,6 +224,9 @@ img{
   background-color: rgba(220, 220, 220, 0.5);
   color: #222328;
 }
+
+
+/* footer */
 footer {
   height: 100px;
   display: flex;
@@ -242,6 +252,8 @@ footer div:nth-child(3) img {
   margin: 10px;
 }
 
+
+/* modal */
 #modalWrap{
   background-color: rgba(0, 0, 0, 0.5);
   display: none;
@@ -251,11 +263,9 @@ footer div:nth-child(3) img {
   height: 100%;
   z-index: 1;
 }
-
 #modalWrap.active{
   display: block;
 }
-
 .modal{
   width: 450px;
   padding: 20px;
@@ -265,16 +275,13 @@ footer div:nth-child(3) img {
   background: #ffffff;
   border: 1px solid;
 }
-
 .modal > h1{
   margin: 10px 0;
   text-align: center;
 }
-
 .modal > p{
   text-align: justify;
 }
-
 .btn{
   width: 100%;
   padding: 10px;

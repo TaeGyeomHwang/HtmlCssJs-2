@@ -1,34 +1,36 @@
+// showSlides 함수의 변수 초기화
 let current = 0;
 
+// modalActive 함수의 변수 선언
 let open = document.querySelector(".open");
 let close = document.querySelector(".btn");
 let modal = document.querySelector("#modalWrap");
 
-let items = document.querySelectorAll(".tabMenu > li"); /* 선택지 가져오기 */
+// 공지사항/갤러리 선택지 가져오기
+let items = document.querySelectorAll(".tabMenu > li");
 
-items.forEach((item)=>{ /* 배열로 저장되기 때문에 forEach로 각각 이벤트 등록 */
-    item.addEventListener('click',()=>{
-        items.forEach((e)=>{
-            e.classList.remove('active');   /* 하나만 선택되도록 기존 효과 지우기 */
-        });
-        item.classList.add('active');   /* 선택한 개체만 효과 추가 */
-    });
-});
-
-
-
+// 창 열자마자 자바스크립트 실행
 window.onload = function () {
-
-    // 이미지 슬라이드 구현
     showSlides();
-    init();
-
-    // javascript 내용 작성
+    modalActive();
+    selectTab();
 }
 
-function showSlides() {
+// tabMemu를 클릭으로 선택하는 함수
+function selectTab() {
+    items.forEach((item)=>{ // forEach를 통해 배열에 접근, 각각의 이벤트 등록
+        item.addEventListener('click',()=>{
+            items.forEach((e)=>{
+                e.classList.remove('active');   /* 하나만 선택되도록 기존 효과 지우기 */
+            });
+            item.classList.add('active');   /* 선택한 개체만 효과 추가 */
+        });
+    });
+}
 
-    // showSlides 함수 내용 작성
+
+// imgSlide를 자동 전환시키는 함수
+function showSlides() {
     let imgSlide = document.querySelectorAll("#imgSlide > a");
 
     for (let i = 0; i < imgSlide.length; i++) {
@@ -43,11 +45,12 @@ function showSlides() {
     setTimeout(showSlides, 2000);
 }
 
-function init(){
-    open.addEventListener("click", function(){
+// modal을 팝업시키는 함수
+function modalActive() {
+    open.addEventListener("click", function () {
         modal.classList.add("active");
     });
-    close.addEventListener("click", function(){
+    close.addEventListener("click", function () {
         modal.classList.remove("active");
     });
 }
